@@ -113,21 +113,6 @@ GrocerEase/
 ├── order-to-deliver.php # Trader order fulfilment
 └── connection.php       # Database connection
 ```
-
----
-
-## Screenshots
-
-> Add screenshots to a `screenshots/` folder and they will appear here.
-
-| Home | Product | Cart |
-|---|---|---|
-| ![Home](screenshots/home.png) | ![Product](screenshots/product.png) | ![Cart](screenshots/cart.png) |
-
-| Checkout | Trader Dashboard | Mobile |
-|---|---|---|
-| ![Checkout](screenshots/checkout.png) | ![Trader](screenshots/trader.png) | ![Mobile](screenshots/mobile.png) |
-
 ---
 
 ## Getting Started
