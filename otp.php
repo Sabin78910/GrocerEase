@@ -87,7 +87,7 @@ if (isset($_GET['id'])) {
                                                                     }
                                                                     ?>" placeholder="Enter your OTP" name="otp" value="<?php
                                                                                 if (isset($_POST['otp'])) {
-                                                                                    echo $_POST['otp'];
+                                                                                    echo htmlspecialchars($_POST['otp']);
                                                                                 }
                                                                                 ?>" />
                                 <!-- Error show  -->

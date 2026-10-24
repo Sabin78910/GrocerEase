@@ -23,7 +23,7 @@
                                                     }
                                                     ?>" placeholder="Enter your current password" name="password" type="password" value="<?php
                                                                                         if (isset($_POST['password'])) {
-                                                                                            echo $_POST['password'];
+                                                                                            echo htmlspecialchars($_POST['password']);
                                                                                         }
                                                                                         ?>" />
                 <!-- Error show  -->
@@ -49,7 +49,7 @@
                                                     }
                                                     ?>" placeholder="Enter your Password" name="newPassword" type="password" value="<?php
                                                                                 if (isset($_POST['newPassword'])) {
-                                                                                    echo $_POST['newPassword'];
+                                                                                    echo htmlspecialchars($_POST['newPassword']);
                                                                                 }
                                                                                 ?>" />
                 <!-- Error show  -->
@@ -75,7 +75,7 @@
                                                     }
                                                     ?>" placeholder="Confirm password" name="confirmPassword" type="password" value="<?php
                                                                                     if (isset($_POST['confirmPassword'])) {
-                                                                                        echo $_POST['confirmPassword'];
+                                                                                        echo htmlspecialchars($_POST['confirmPassword']);
                                                                                     }
                                                                                     ?>" />
                 <!-- Error show  -->

@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 if (isset($_GET['id'])) {
-    $user_id = $_GET['id'];
+    $user_id = (int)$_GET['id'];
     if (isset($_POST['changePassword'])) {
         $errCount = 0;
         $newPassword = $_POST['newPassword'];
@@ -104,7 +104,7 @@ if (isset($_GET['id'])) {
                                                                     }
                                                                     ?>" placeholder="Enter New Password" name="newPassword" type="password" value="<?php
                                                                                                                                                     if (isset($_POST['newPassword'])) {
-                                                                                                                                                        echo $_POST['newPassword'];
+                                                                                                                                                        echo htmlspecialchars($_POST['newPassword']);
                                                                                                                                                     }
                                                                                                                                                     ?>" />
                                 <!-- Error show  -->
@@ -129,7 +129,7 @@ if (isset($_GET['id'])) {
                                                                     }
                                                                     ?>" placeholder="Confirm password" name="confirmPassword" type="password" value="<?php
                                                                                                                                                         if (isset($_POST['confirmPassword'])) {
-                                                                                                                                                            echo $_POST['confirmPassword'];
+                                                                                                                                                            echo htmlspecialchars($_POST['confirmPassword']);
                                                                                                                                                         }
                                                                                                                                                         ?>" />
                                 <!-- Error show  -->

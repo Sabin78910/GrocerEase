@@ -99,7 +99,7 @@
                              name="email"
                              value="<?php
                                     if(isset( $_POST['email'])){
-                                        echo $_POST['email'];
+                                        echo htmlspecialchars($_POST['email']);
                                     }
                                     ?>"
                              />

@@ -158,7 +158,7 @@ if(isset($_POST['submit-review'])){
                         $message=$_POST['message'];
                         $NoOfStar=$_POST['star-rating'];
                         $reviewUser=$_POST['user-id'];
-                        $reviewProduct=$_POST['product-id'];
+                        $reviewProduct= (int)$_POST['product-id'];
 
                         if($canReviewFlag){
 
