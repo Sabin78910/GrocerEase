@@ -15,8 +15,8 @@ include('./connection.php');
 //here type can be add, subs, delete, 
 if (isset($_GET['product_id']) && isset($_GET['qty']) && isset($_GET['type'])) {
 
-    $product_id = $_GET['product_id'];
-    $quantity = $_GET['qty'];
+    $product_id = (int)$_GET['product_id'];
+    $quantity = (int)$_GET['qty'];
     $type = $_GET['type'];
     //Checking stock of product
     $sql = "SELECT * FROM PRODUCT WHERE IS_DISABLED='false' AND PRODUCT_ID=$product_id";
@@ -137,7 +137,7 @@ if (isset($_GET['product_id']) && isset($_GET['qty']) && isset($_GET['type'])) {
 //here type = add, delete . category=wishlist , product_id
 if (isset($_GET['category']) && isset($_GET['product_id']) && isset($_GET['type'])) {
 
-    $wishlist_proId = $_GET['product_id'];
+    $wishlist_proId = (int)$_GET['product_id'];
     $wishlist_category = $_GET['category'];
     $wishlist_type = $_GET['type'];
 

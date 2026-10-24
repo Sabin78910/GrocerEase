@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 if (isset($_GET['product-id'])) {
-    $id = $_GET['product-id'];
+    $id = (int)$_GET['product-id'];
 }
 SESSION_START();
 //checking if item is in stock
@@ -23,8 +23,8 @@ if (!(isset($_SESSION['user_id']))) {
 //adding product to cart
 if (isset($_POST['add-product'])) {
 
-    $product_id = $_POST['product-id'];
-    $quantity = $_POST['quantity'];
+    $product_id = (int)$_POST['product-id'];
+    $quantity = (int)$_POST['quantity'];
 
 
     //To validate.... check if quantity is int>0, product is in table
@@ -128,7 +128,7 @@ if ($qty_in_stock_check <= 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     if (isset($_GET['product-id'])) {
-        $id = $_GET['product-id'];
+        $id = (int)$_GET['product-id'];
 
         $query = "SELECT * FROM PRODUCT WHERE PRODUCT_ID=" . $id;
         $result = oci_parse($conn, $query);
@@ -157,7 +157,7 @@ if ($qty_in_stock_check <= 0) {
             <?php
             //Getting Product and Shop Details
             if (isset($_GET['product-id'])) {
-                $id = $_GET['product-id'];
+                $id = (int)$_GET['product-id'];
 
                 $query = "SELECT * FROM PRODUCT WHERE PRODUCT_ID=" . $id;
                 $result = oci_parse($conn, $query);
@@ -178,7 +178,7 @@ if ($qty_in_stock_check <= 0) {
             //Wishlist
             if (isset($_GET['product-id']) && isset($_GET['category']) && isset($_GET['type'])) {
 
-                $wishlist_proId = $_GET['product-id'];
+                $wishlist_proId = (int)$_GET['product-id'];
                 $wishlist_category = $_GET['category'];
                 $wishlist_type = $_GET['type'];
 
@@ -308,13 +308,13 @@ if ($qty_in_stock_check <= 0) {
                                         $qtyAction = $_POST['qty-button'];
                                         if ($qtyAction == "minus") {
                                             if ($_POST['qty'] > 1) {
-                                                $qty = $_POST['qty'] - 1;
+                                                $qty = (int)$_POST['qty'] - 1;
                                             } else {
                                                 $qty = 1;
                                             }
                                         }
                                         if ($qtyAction == "plus") {
-                                            $qty = $_POST['qty'] + 1;
+                                            $qty = (int)$_POST['qty'] + 1;
                                         }
                                     }
                                     echo $qty;

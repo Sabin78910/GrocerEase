@@ -16,13 +16,13 @@ if (!(isset($_SESSION['user_id']))) {
 
     $search='';
     if(isset($_GET['search'])){
-        $search=$_GET['search'];
+        $search=str_replace("'", "''", (string)$_GET['search']);
     }
     $sql = "SELECT * FROM PRODUCT INNER JOIN SHOP ON PRODUCT.SHOP_ID=SHOP.SHOP_ID INNER JOIN SHOP_REQUEST ON SHOP.SHOP_REQUEST_ID=SHOP_REQUEST.SHOP_REQUEST_ID WHERE PRODUCT.IS_DISABLED='false' AND (LOWER(PRODUCT.PRODUCT_NAME) LIKE LOWER('%$search%')) OR (LOWER(SHOP_REQUEST.CATEGORY) LIKE LOWER('%$search%'))";
 
     if (isset($_POST['add-product'])) {
 
-        $product_id = $_POST['product_id'];
+        $product_id = (int)$_POST['product_id'];
         $quantity = 1;
     
     
@@ -112,7 +112,7 @@ if (!(isset($_SESSION['user_id']))) {
     }
 
     if(isset($_POST['Category'])){
-        $Cat=$_POST['Category'];
+        $Cat=array_map(fn($c) => str_replace("'", "''", (string)$c), (array)$_POST['Category']);
 
         if(isset($_GET['search'])){
 
@@ -197,7 +197,7 @@ if (!(isset($_SESSION['user_id']))) {
                             
                             <br><input type="submit" value="Apply" class="btn primary-outline-btn">
                             <input type="text" name="sort" value="<?php if(isset($_POST['sort'])){
-                                echo $_POST['sort'];
+                                echo htmlspecialchars($_POST['sort']);
                             } ?>" hidden>
                         </form>
                     </div>
@@ -206,7 +206,7 @@ if (!(isset($_SESSION['user_id']))) {
 
                     <div class="filter-page__Top-Row">
 
-                        <div class="filter-page__Top-Row__Res-Num">Showing <?php echo $nrows;?> Results<?php if(isset($_GET['search'])){echo ' for "'.$_GET['search'].'"';}?></div>
+                        <div class="filter-page__Top-Row__Res-Num">Showing <?php echo $nrows;?> Results<?php if(isset($_GET['search'])){echo ' for "'.htmlspecialchars($_GET['search']).'"';}?></div>
                         <div class="filter-page__Top-Row__Categories">
                             <button class="filter-page__Top-Row__Categories__dropdown-button">Categories</button>
                             <form class="Categories-filter-page__Form dropdown-form" method="POST">
@@ -233,7 +233,7 @@ if (!(isset($_SESSION['user_id']))) {
                             
                             <br><input type="submit" value="Apply" class="btn primary-outline-btn">
                             <input type="text" name="sort" value="<?php if(isset($_POST['sort'])){
-                                echo $_POST['sort'];
+                                echo htmlspecialchars($_POST['sort']);
                             } ?>" hidden>
                         </form>
                         </div>

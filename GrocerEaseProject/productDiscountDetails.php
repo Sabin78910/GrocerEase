@@ -13,7 +13,7 @@ if(isset($_GET['type'])){
     $type=$_GET['type'];
 }
 if(isset($_GET['product-id'])){
-    $product_id=$_GET['product-id'];
+    $product_id= (int)$_GET['product-id'];
     $product_id = (int)$product_id;
 }
 

@@ -18,7 +18,7 @@ if (!(isset($_SESSION['user_id']))) {
 
 if(isset($_GET['userId']) && isset($_GET['payment']) && $_GET['payment'] && isset($_GET['orderId']) && isset($_GET['PayerID'])){
 
-$userId = $_GET['userId'];
+$userId = (int)$_GET['userId'];
 $orderId = $_GET['orderId'];
 
 $sqlUSer = "Select * from USERS WHERE USER_ID=$userId AND USER_ROLE='customer'";

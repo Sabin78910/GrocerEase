@@ -185,7 +185,7 @@
                                                                     }
                                                                     ?>" placeholder="FirstName" name="Tname" value="<?php
                                                                             if (isset($_POST['Tname'])) {
-                                                                                echo $_POST['Tname'];
+                                                                                echo htmlspecialchars($_POST['Tname']);
                                                                             }
                                                                             ?>" />
                                 <?php
@@ -211,7 +211,7 @@
                                                                     }
                                                                     ?>" placeholder="Enter your email Address" name="Temail" value="<?php
                                                                                             if (isset($_POST['Temail'])) {
-                                                                                                echo $_POST['Temail'];
+                                                                                                echo htmlspecialchars($_POST['Temail']);
                                                                                             }
                                                                                             ?>" />
                                 <!-- Error show  -->
@@ -237,7 +237,7 @@
                                                                     }
                                                                     ?>" placeholder="+44" name="Tphone" value="<?php
                                                                         if (isset($_POST['Tphone'])) {
-                                                                            echo $_POST['Tphone'];
+                                                                            echo htmlspecialchars($_POST['Tphone']);
                                                                         }
                                                                         ?>" />
 
@@ -264,7 +264,7 @@
                                                                     }
                                                                     ?>" placeholder="Shop Name" name="name" value="<?php
                                                                             if (isset($_POST['name'])) {
-                                                                                echo $_POST['name'];
+                                                                                echo htmlspecialchars($_POST['name']);
                                                                             }
                                                                             ?>" />
                                 <?php
@@ -286,7 +286,7 @@
                                                                     }
                                                                     ?>" placeholder="Shop Address" name="addr" value="<?php
                                                                                 if (isset($_POST['addr'])) {
-                                                                                    echo $_POST['addr'];
+                                                                                    echo htmlspecialchars($_POST['addr']);
                                                                                 }
                                                                                 ?>" />
                                 <?php
@@ -310,7 +310,7 @@
                                                                     }
                                                                     ?>" placeholder="+44" name="phone" value="<?php
                                                                         if (isset($_POST['phone'])) {
-                                                                            echo $_POST['phone'];
+                                                                            echo htmlspecialchars($_POST['phone']);
                                                                         }
                                                                         ?>" />
 
@@ -334,7 +334,7 @@
                                                                     }
                                                                     ?>" placeholder="Enter the type of product sold by shop" name="product" value="<?php
                                                                                                             if (isset($_POST['product'])) {
-                                                                                                                echo $_POST['product'];
+                                                                                                                echo htmlspecialchars($_POST['product']);
                                                                                                             }
                                                                                                             ?>" />
                                 <?php
@@ -356,7 +356,7 @@
                                                                                 }
                                                                                 ?>" placeholder="Enter the type of product sold by shop" name="desc" value="<?php
                                                                                                         if (isset($_POST['desc'])) {
-                                                                                                            echo $_POST['desc'];
+                                                                                                            echo htmlspecialchars($_POST['desc']);
                                                                                                         }
                                                                                                         ?>" rows="4" cols="50">
                             </textarea>
