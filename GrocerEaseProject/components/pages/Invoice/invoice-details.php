@@ -2,7 +2,7 @@
 include './connection.php';
 $invoicesql = "SELECT * FROM ORDERPLACE 
             INNER JOIN USERS ON ORDERPLACE.USER_ID= USERS.USER_ID           
-            WHERE ORDERPLACE_ID=" . $_GET['order-id'] . " 
+            WHERE ORDERPLACE_ID=" .(int)$_GET['order-id'] . " 
             ORDER BY ORDERPLACE_ID DESC";
 $result = oci_parse($conn, $invoicesql);
 oci_execute($result);
@@ -79,12 +79,12 @@ $user_id = $_SESSION['user_id'];
             <?php
             $detailsql = "SELECT * FROM ORDERLIST
             INNER JOIN PRODUCT ON ORDERLIST.PRODUCT_ID= PRODUCT.PRODUCT_ID 
-            WHERE ORDERLIST.ORDERPLACE_ID=" . $_GET['order-id'];
+            WHERE ORDERLIST.ORDERPLACE_ID=" .(int)$_GET['order-id'];
             $stid = oci_parse($conn, $detailsql);
             oci_execute($stid);
             $nrows = oci_fetch_all($stid, $res);
 
-            $paymentsql = "SELECT * FROM ORDERPLACE WHERE ORDERPLACE_ID=" . $_GET['order-id'];
+            $paymentsql = "SELECT * FROM ORDERPLACE WHERE ORDERPLACE_ID=" .(int)$_GET['order-id'];
             $paymentstid = oci_parse($conn, $paymentsql);
             oci_execute($paymentstid);
             while (oci_fetch($paymentstid)) {

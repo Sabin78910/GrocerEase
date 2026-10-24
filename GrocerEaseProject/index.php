@@ -21,7 +21,7 @@ if ((isset($_SESSION['role']) && $_SESSION['role'] == 'trader')) {
 //through array add every item to the local i.e. session cart
 if (isset($_POST['add-product'])) {
 
-    $product_id = $_POST['product_id'];
+    $product_id = (int)$_POST['product_id'];
     $quantity = 1;
 
 
@@ -114,7 +114,7 @@ if (isset($_POST['add-product'])) {
 //For wishList 
 if (isset($_GET['category']) && isset($_GET['product_id']) && isset($_GET['type']) && isset($_SESSION['isAuthenticated']) && $_SESSION['isAuthenticated']) {
 
-    $wishlist_proId = $_GET['product_id'];
+    $wishlist_proId = (int)$_GET['product_id'];
     $wishlist_category = $_GET['category'];
     $wishlist_type = $_GET['type'];
 

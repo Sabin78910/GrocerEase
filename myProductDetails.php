@@ -26,13 +26,13 @@ $unit = '';
 $is_disabled = '';
 
 if(isset($_GET['shop-id'])){
-    $shop_id = $_GET['shop-id'];
+    $shop_id = (int)$_GET['shop-id'];
     $shop_id=(int)$shop_id;
 }
 $type = $_GET['type'];
 
 if(isset($_GET['product-id'])){
-    $product_id = $_GET['product-id'];
+    $product_id = (int)$_GET['product-id'];
     $sqlFetch = "SELECT * from PRODUCT WHERE PRODUCT_ID = $product_id";
 
 $stid = oci_parse($conn, $sqlFetch);
@@ -68,7 +68,7 @@ if (isset($_POST['savePRoductDetail'])) {
     $product_name =$_POST['product_name'];
     $description = $_POST['description'];
     $image = $_POST['image'];
-    $quantity = $_POST['quantity'];
+    $quantity = (int)$_POST['quantity'];
     $allergyInfo = $_POST['allergyInfo'];
     $price = $_POST['price'];
     $unit = $_POST['unit'];

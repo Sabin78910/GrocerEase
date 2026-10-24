@@ -210,7 +210,7 @@ if (isset($_POST['userRegisterSubmit'])) {
                                                                         }
                                                                         ?>" placeholder="FirstName" name="fname" value="<?php
                                                                                                                         if (isset($_POST['fname'])) {
-                                                                                                                            echo $_POST['fname'];
+                                                                                                                            echo htmlspecialchars($_POST['fname']);
                                                                                                                         }
                                                                                                                         ?>" />
                                     <?php
@@ -231,7 +231,7 @@ if (isset($_POST['userRegisterSubmit'])) {
                                                                         }
                                                                         ?>" placeholder="LastName" name="lname" value="<?php
                                                                                                                         if (isset($_POST['lname'])) {
-                                                                                                                            echo $_POST['lname'];
+                                                                                                                            echo htmlspecialchars($_POST['lname']);
                                                                                                                         }
                                                                                                                         ?>" />
                                     <?php
@@ -260,7 +260,7 @@ if (isset($_POST['userRegisterSubmit'])) {
                                                                         }
                                                                         ?>" placeholder="Enter your email Address" name="email" value="<?php
                                                                                                                                         if (isset($_POST['email'])) {
-                                                                                                                                            echo $_POST['email'];
+                                                                                                                                            echo htmlspecialchars($_POST['email']);
                                                                                                                                         }
                                                                                                                                         ?>" />
                                     <!-- Error show  -->
@@ -286,7 +286,7 @@ if (isset($_POST['userRegisterSubmit'])) {
                                                                         }
                                                                         ?>" placeholder="+44" name="phone" value="<?php
                                                                                                                     if (isset($_POST['phone'])) {
-                                                                                                                        echo $_POST['phone'];
+                                                                                                                        echo htmlspecialchars($_POST['phone']);
                                                                                                                     }
                                                                                                                     ?>" />
 
@@ -346,7 +346,7 @@ if (isset($_POST['userRegisterSubmit'])) {
                                 
                                 " placeholder="Enter your password" type="password" name="password" id="pass-input" value="<?php
                                                                                                                             if (isset($_POST['password'])) {
-                                                                                                                                echo $_POST['password'];
+                                                                                                                                echo htmlspecialchars($_POST['password']);
                                                                                                                             }
                                                                                                                             ?>" />
 
@@ -387,7 +387,7 @@ if (isset($_POST['userRegisterSubmit'])) {
                                 
                                 " placeholder="Re-enter password" type="password" name="Rpassword" id="pass-input" value="<?php
                                                                                                                             if (isset($_POST['Rpassword'])) {
-                                                                                                                                echo $_POST['Rpassword'];
+                                                                                                                                echo htmlspecialchars($_POST['Rpassword']);
                                                                                                                             }
                                                                                                                             ?>" />
 

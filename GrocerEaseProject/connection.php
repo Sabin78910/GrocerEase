@@ -1,6 +1,6 @@
 <!-- Everyone create the same schema and password.. -->
 <?php
-$conn = oci_connect('GROCEREASE1', 'Sabin@789', 'localhost/XE');
+$conn = oci_connect(getenv('DB_USER') ?: 'GROCEREASE1', getenv('DB_PASS') ?: '', getenv('DB_DSN') ?: 'localhost/XE');
 
 if (!$conn) {
 	$e = oci_error();
