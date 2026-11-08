@@ -16,13 +16,13 @@ $LHPriceFlag = false;
 
 $search = '';
 if (isset($_GET['search'])) {
-    $search = $_GET['search'];
+    $search = str_replace("'", "''", (string)$_GET['search']);
 }
 $sql = "SELECT * FROM PRODUCT INNER JOIN SHOP ON PRODUCT.SHOP_ID=SHOP.SHOP_ID INNER JOIN SHOP_REQUEST ON SHOP.SHOP_REQUEST_ID=SHOP_REQUEST.SHOP_REQUEST_ID WHERE PRODUCT.IS_DISABLED='false' AND (LOWER(PRODUCT.PRODUCT_NAME) LIKE LOWER('%$search%')) OR (LOWER(SHOP_REQUEST.CATEGORY) LIKE LOWER('%$search%'))";
 
 if (isset($_POST['add-product'])) {
 
-    $product_id = $_POST['product_id'];
+    $product_id = (int)$_POST['product_id'];
     $quantity = 1;
 
 
@@ -112,8 +112,8 @@ if (isset($_POST['add-product'])) {
 }
 
 if (isset($_POST['Category'])) {
-    $Cat = $_POST['Category'];
-    $Cat = isset($_POST['Category']) ? $_POST['Category'] : [];
+    $Cat = array_map(fn($c) => str_replace("'", "''", (string)$c), (array)$_POST['Category']);
+    $Cat = isset($_POST['Category']) ? array_map(fn($c) => str_replace("'", "''", (string)$c), (array)$_POST['Category']) : [];
 
     if (isset($_GET['search'])) {
 
@@ -201,7 +201,7 @@ $nrows = oci_fetch_all($stid, $res);
 
                             <br><input type="submit" value="Apply" class="btn primary-outline-btn">
                             <input type="text" name="sort" value="<?php if (isset($_POST['sort'])) {
-                                                                        echo $_POST['sort'];
+                                                                        echo htmlspecialchars($_POST['sort']);
                                                                     } ?>" hidden>
                         </form>
                     </div>
@@ -239,7 +239,7 @@ $nrows = oci_fetch_all($stid, $res);
 
                                 <br><input type="submit" value="Apply" class="btn primary-outline-btn">
                                 <input type="text" name="sort" value="<?php if (isset($_POST['sort'])) {
-                                                                            echo $_POST['sort'];
+                                                                            echo htmlspecialchars($_POST['sort']);
                                                                         } ?>" hidden>
                             </form>
                         </div>

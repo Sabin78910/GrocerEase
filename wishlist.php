@@ -16,9 +16,9 @@ $user_id= $_SESSION['user_id'];
 //through array add every item to the local i.e. session cart
 if (isset($_GET['product_id']) && isset($_GET['qty'])) {
 
-    $product_id = $_GET['product_id'];
+    $product_id = (int)$_GET['product_id'];
 
-    $quantity = $_GET['qty'];
+    $quantity = (int)$_GET['qty'];
 
 
     //To validate.... check if quantity is int>0, product is in table
@@ -113,7 +113,7 @@ if (isset($_GET['product_id']) && isset($_GET['qty'])) {
 
 if (isset($_GET['category']) && isset($_GET['product_id']) && isset($_GET['type']) && isset($_SESSION['isAuthenticated']) && $_SESSION['isAuthenticated']) {
 
-    $wishlist_proId = $_GET['product_id'];
+    $wishlist_proId = (int)$_GET['product_id'];
     $wishlist_category = $_GET['category'];
     $wishlist_type = $_GET['type'];
 

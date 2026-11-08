@@ -96,7 +96,7 @@ if (isset($_POST['emailSubmit']) && !empty($_POST['emailSubmit'])) {
                                                                     }
                                                                     ?>" placeholder="Enter your Email" name="email" value="<?php
                                                                                     if (isset($_POST['email'])) {
-                                                                                        echo $_POST['email'];
+                                                                                        echo htmlspecialchars($_POST['email']);
                                                                                     }
                                                                                     ?>" />
                                 <!-- Error show  -->

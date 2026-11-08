@@ -139,7 +139,7 @@ if (isset($_POST['registerastrader'])) {
                                                                     }
                                                                     ?>" placeholder="Enter your email Address" name="email" value="<?php
                                                                                                                                     if (isset($_POST['email'])) {
-                                                                                                                                        echo $_POST['email'];
+                                                                                                                                        echo htmlspecialchars($_POST['email']);
                                                                                                                                     }
                                                                                                                                     ?>" />
                                 <!-- Error show  -->
@@ -170,7 +170,7 @@ if (isset($_POST['registerastrader'])) {
                                 
                                 " placeholder="Enter your password" type="password" name="password" id="pass-input" value="<?php
                                                                                                                             if (isset($_POST['password'])) {
-                                                                                                                                echo $_POST['password'];
+                                                                                                                                echo htmlspecialchars($_POST['password']);
                                                                                                                             }
                                                                                                                             ?>" />
 

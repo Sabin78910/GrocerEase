@@ -63,7 +63,7 @@
                              }
                             ?>" placeholder="Shop Name" name="name"  value="<?php
                             if(isset( $_POST['name'])){
-                                echo $_POST['name'];
+                                echo htmlspecialchars($_POST['name']);
                             }
                             ?>"/>
                              <?php
@@ -91,7 +91,7 @@
                              name="email"
                              value="<?php
                                     if(isset( $_POST['email'])){
-                                        echo $_POST['email'];
+                                        echo htmlspecialchars($_POST['email']);
                                     }
                                     ?>"
 
@@ -119,7 +119,7 @@
                              }
                             ?>" placeholder="Message type" name="subject"  value="<?php
                             if(isset( $_POST['subject'])){
-                                echo $_POST['subject'];
+                                echo htmlspecialchars($_POST['subject']);
                             }
                             ?>"/>
                              <?php
@@ -141,7 +141,7 @@
                              }
                             ?>"  name="desc"  value="<?php
                             if(isset( $_POST['desc'])){
-                                echo $_POST['desc'];
+                                echo htmlspecialchars($_POST['desc']);
                             }
                             ?>" rows="4" cols="50">
                             </textarea>
